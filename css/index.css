@@ -1,0 +1,31 @@
+body{
+    background-color: #3b3b3d;
+}
+
+h1{
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 700;
+    color: #eeeeee;
+    font-size: 500%;
+}
+
+h2{
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 500;
+    color: #eeeeee;
+    font-size: 400%;
+}
+
+h1,h2{
+    letter-spacing: .05em;
+}
+
+span{
+    color: #f36b21;
+}
+
+.fit-image img{
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+}
