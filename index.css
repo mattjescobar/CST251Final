@@ -1,78 +1,191 @@
-html{
-	background-color: #3b3b3d;
-	background-size: 100%;
-}
 body{
-	background-color: #3b3b3d;
+    background-color: #3b3b3d;
 }
-.btn{
-	font-family: 'Overpass', arial, san-serif;
-	margin-bottom: 10px;
-	margin-right: 5px;
-	margin-left: 5px;
-}
-}
+
 h1{
-	font-family: 'Ubuntu', arial, san-serif;
-	font-weight: bold;
-}
-p{
-	font-family: 'Overpass', arial, san-serif;
-	align-content: justify;
-}
-.w3-container img{
-
-	max-width: 100%;
-	height: 300px;
-	object-fit: cover;
-	background-color: none;
-}
-.image {
-  opacity: 1;
-  display: block;
-  width: 100%;
-  height: auto;
-  transition: .5s ease;
-  backface-visibility: hidden;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 700;
+    color: #eeeeee;
+    font-size: 500%;
 }
 
-.middle {
-  transition: .5s ease;
-  opacity: 0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%)
+h2{
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 500;
+    color: #eeeeee;
+    font-size: 400%;
 }
 
-.container:hover .image {
-  opacity: 0.3;
+#subtitle{
+  margin-top: -3vh;
 }
 
-.container:hover #center-image {
-  opacity: 1;
-}
-.container:hover #left-image {
-  opacity: 1;
-}
-.container:hover #right-image {
-  opacity: 1;
+h1,h2{
+    letter-spacing: .05em;
 }
 
-.text {
-  background-color: #f29e23;
+span{
+    color: #f36b21;
+}
+
+/* Code shamelessly stolen from Jose Oliveras: https://codepen.io/joliveras/pen/GpLVKv */
+.container {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-flow: row nowrap;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
+  margin-top: 1vh;
+}
+.container .item {
+  display: grid;
+  margin: auto;
+  position: relative;
+  -webkit-box-flex: 1;
+          flex: 1;
+  text-align: center;
   color: white;
-  font-size: 16px;
-  padding: 16px 32px;
+  -webkit-transition: .3s;
+  transition: .3s;
+  max-width: 20%;
+  height: 40vh;
+  min-width: 15%;
+  background-color: rgba(59, 59, 61, 0.4);
 }
-.col-md-12, .col-md-4, .col-md-9, .contain{
-	background-color: #3b3b3d;
-	color: white;
-	position: relative;
-    width: 50%;
+.container .item:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 94%;
+  background-position: center bottom;
+  background-size: cover;
+  z-index: -1;
 }
-.col-md-3{
-	background-color: #3b3b3d;
-	color: white;
+.container .item:nth-of-type(1):before {
+  background-image: url("../images/history.jpg");
 }
+.container .item:nth-of-type(2):before {
+  background-image: url("../images/enviroment.jpg");
+}
+.container .item:nth-of-type(3):before {
+  background-image: url("../images/people.png");
+}
+.container .item:nth-of-type(4):before {
+  background-image: url("../images/animal.jpg");
+}
+.container .item:nth-of-type(5):before {
+  background-image: url("../images/econ.jpg");
+}
+.container .item:nth-of-type(6):before {
+  background-image: url("../images/donate.jpg");
+}
+
+.container .item:hover {
+  -webkit-transition: .5s;
+  transition: .5s;
+  max-width: 40% !important;
+  -webkit-box-flex: 3;
+          flex-grow: 3;
+  cursor: pointer;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0);
+}
+.container .item:hover {
+  -webkit-transform: none;
+          transform: none;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+.container .content {
+  margin: auto;
+  font-size: 2em;
+}
+.container h3 {
+  -webkit-transform: translateY(0vh);
+          transform: translateY(0vh);
+}
+
+a:link{
+  color: #eeeeee;
+}
+a:visited{
+  color: #eeeeee;
+}
+
+.container-mobile{
+  display: none;
+}
+
+/* Mobile Device CSS*/
+@media only screen and (max-width: 766px) {
+  .container{
+    display: none;
+  }
+  .container-mobile{
+    display: flex;
+    flex-direction: column;
+  }
+  h1{
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 700;
+    color: #eeeeee;
+    font-size: 300%;
+}
+
+h2{
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 500;
+    color: #eeeeee;
+    font-size: 200%;
+}
+
+.container-mobile .item {
+  display: grid;
+  margin: auto;
+  position: relative;
+  -webkit-box-flex: 1;
+          flex: 1;
+  text-align: center;
+  color: white;
+  -webkit-transition: .3s;
+  transition: .3s;
+  width: 100%;
+  height: 40vh;
+}
+.container-mobile .item:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 94%;
+  background-position: center bottom;
+  background-size: cover;
+  z-index: -1;
+}
+
+.container-mobile .item:nth-of-type(1):before {
+  background-image: url("../images/history.jpg");
+}
+.container-mobile .item:nth-of-type(2):before {
+  background-image: url("../images/enviroment.jpg");
+}
+.container-mobile .item:nth-of-type(3):before {
+  background-image: url("../images/people.png");
+}
+.container-mobile .item:nth-of-type(4):before {
+  background-image: url("../images/animal.jpg");
+}
+.container-mobile .item:nth-of-type(5):before {
+  background-image: url("../images/econ.jpg");
+}
+.container-mobile .item:nth-of-type(6):before {
+  background-image: url("../images/donate.jpg");
+}
+} 
